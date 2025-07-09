@@ -6,9 +6,13 @@ const options = {
     }
   };
 
-fetch('https://api.themoviedb.org/3/authentication')
-.then(response => response.json())
-.then(data => {
-    console.log(data);
-})
+// fetch('https://api.themoviedb.org/3/authentication')
+// .then(response => response.json())
+// .then(data => {
+//     console.log(data);
+// })
 
+fetch('https://api.themoviedb.org/3/movie/popular?language=en-US&page=1', options)
+.then(res => res.json())
+.then(res => console.log(res))
+.catch(err => console.error(err));
